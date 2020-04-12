@@ -1,94 +1,118 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>Styphon&#39;s Site</title>
+  
+<link rel="stylesheet" href="/css/styles.css">
 
   
-  <title>2019CCBSummary-04 | Styphon&#39;s Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第四次实验问题汇总 本次试验中需要用到栈和队列这两种数据结构。为了演示自定义类的实际应用，这篇总结的A.C.E三道题均使用了class Stack():的自定义类来存储栈结构。现给出栈的定义。   123456789101112131415161718192021222324class Stack():    def __init__(self):        self.items &#x3D; []">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2019CCBSummary-04">
-<meta property="og:url" content="http://yoursite.com/2020/04/13/2019CCBSummary-04/">
-<meta property="og:site_name" content="Styphon&#39;s Site">
-<meta property="og:description" content="第四次实验问题汇总 本次试验中需要用到栈和队列这两种数据结构。为了演示自定义类的实际应用，这篇总结的A.C.E三道题均使用了class Stack():的自定义类来存储栈结构。现给出栈的定义。   123456789101112131415161718192021222324class Stack():    def __init__(self):        self.items &#x3D; []">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-12T18:44:21.000Z">
-<meta property="article:modified_time" content="2020-04-12T18:44:46.966Z">
-<meta property="article:author" content="Styphon">
-<meta name="twitter:card" content="summary">
+<script src="/lib/jquery.js"></script>
+
   
-    <link rel="alternate" href="/atom.xml" title="Styphon&#39;s Site" type="application/atom+xml">
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+
   
+<script src="/js/common.js"></script>
+
   
-    <link rel="icon" href="/favicon.png">
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Styphon&#39;s Site</a>
-      </h1>
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
       
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">Styphon&#39;s Site</a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
       </div>
-    </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" target="_blank" rel="noopener" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-2019CCBSummary-04" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/13/2019CCBSummary-04/" class="article-date">
-  <time datetime="2020-04-12T18:44:21.000Z" itemprop="datePublished">2020-04-13</time>
-</a>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
     
-  </div>
-  <div class="article-inner">
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
     
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      2019CCBSummary-04
-    </h1>
-  
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" target="_blank" rel="noopener" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第四次实验问题汇总"><a href="#第四次实验问题汇总" class="headerlink" title="第四次实验问题汇总"></a>第四次实验问题汇总</h1><hr>
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">2019CCBSummary-04</h2>
+       
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2020-04-13</span>
+    </div>
+    <div class="post-content">
+      <h1 id="第四次实验问题汇总"><a href="#第四次实验问题汇总" class="headerlink" title="第四次实验问题汇总"></a>第四次实验问题汇总</h1><hr>
 <p>本次试验中需要用到栈和队列这两种数据结构。为了演示自定义类的实际应用，这篇总结的A.C.E三道题均使用了<code>class Stack():</code>的自定义类来存储栈结构。现给出栈的定义。  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.items = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item)</span>:</span></span><br><span class="line">        self.items.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.is_empty():</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">'stackIsEmpty'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.items.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.is_empty():</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">'stackIsEmpty'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.items[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.items == []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.items)</span><br></pre></td></tr></table></figure>
 <hr>
@@ -140,121 +164,49 @@
 <h4 id="正确答案-4"><a href="#正确答案-4" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">c = input() + <span class="string">'/'</span>                               <span class="comment"># 为了能够录入最后一个数，在末尾添加一个符号</span></span><br><span class="line">s = Stack()                                     <span class="comment"># 实例化</span></span><br><span class="line">temp = <span class="string">''</span>                                       <span class="comment"># 用于存放数字，因为不保证数都是一位，所以需要这个变量</span></span><br><span class="line">Ar=&#123;<span class="string">'H'</span>:<span class="number">1.007</span>, <span class="string">'C'</span>:<span class="number">12.011</span>,                      <span class="comment"># 字典，存放原子量</span></span><br><span class="line">    <span class="string">'N'</span>:<span class="number">14.007</span>, <span class="string">'O'</span>:<span class="number">15.999</span>&#125;</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> c:                                    <span class="comment"># 逐字符遍历</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ch.isdigit():                        <span class="comment"># 如果不是数字，这里也可以写 if ch.isdigit() == 0:</span></span><br><span class="line">        <span class="keyword">if</span> temp != <span class="string">''</span>:                          <span class="comment"># temp非空说明需要将前一个原子的原子量乘以乘数</span></span><br><span class="line">            m = s.pop()</span><br><span class="line">            s.push(int(temp) * m)</span><br><span class="line">            temp = <span class="string">''</span>                           <span class="comment"># 注意清空temp</span></span><br><span class="line">    <span class="keyword">else</span>:                                       <span class="comment"># 如果是数字，则暂存进temp</span></span><br><span class="line">        temp += ch</span><br><span class="line">        <span class="keyword">continue</span>                                <span class="comment"># 并且不用进行后续处理</span></span><br><span class="line">    <span class="keyword">if</span> ch == <span class="string">'('</span>:                               <span class="comment"># 左括号直接压栈</span></span><br><span class="line">        s.push(ch)</span><br><span class="line">        <span class="keyword">continue</span>                                <span class="comment"># 此处不写continue，后续使用elif也是可以的</span></span><br><span class="line">    <span class="keyword">if</span> ch <span class="keyword">in</span> Ar.keys():                         <span class="comment"># 如果是元素符号</span></span><br><span class="line">        s.push(Ar[ch])                          <span class="comment"># 则压入原子量</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> ch == <span class="string">')'</span>:                               <span class="comment"># 如果是右括号</span></span><br><span class="line">        sum_ = <span class="number">0</span>                                <span class="comment"># 循环变量赋初值</span></span><br><span class="line">        <span class="keyword">while</span> s.peek() != <span class="string">'('</span>:                  <span class="comment"># 不断弹出直至遇到左括号</span></span><br><span class="line">            sum_ += s.pop()                     <span class="comment"># 累加弹出的值</span></span><br><span class="line">        s.pop()                                 <span class="comment"># 弹出左括号</span></span><br><span class="line">        s.push(sum_)                            <span class="comment"># 压入总和</span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> s.is_empty() == <span class="number">0</span>:                        <span class="comment"># 栈内剩余元素的和即为答案</span></span><br><span class="line">    ans += s.pop()</span><br><span class="line">print(<span class="string">"%.2f"</span>%ans)</span><br></pre></td></tr></table></figure>
 <h4 id="优化解法-3"><a href="#优化解法-3" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="string">'('</span> + input() + <span class="string">')'</span></span><br><span class="line"></span><br><span class="line">    &lt;code block&gt;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"%.2f"</span>%s.pop())</span><br><span class="line"><span class="comment"># 直接在最外侧加上括号，就可以直接在循环内加和，不需要最后单独加和</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Ar=&#123;<span class="string">'H'</span>:<span class="number">1007</span>, <span class="string">'C'</span>:<span class="number">12011</span>, </span><br><span class="line">    <span class="string">'N'</span>:<span class="number">14007</span>, <span class="string">'O'</span>:<span class="number">15999</span>&#125;</span><br><span class="line"></span><br><span class="line">    &lt;code block&gt;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"%.2f"</span>%(ans/<span class="number">1000</span>))</span><br><span class="line"><span class="comment"># 使用整型数运算避免精度问题。</span></span><br></pre></td></tr></table></figure>
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2020/04/13/2019CCBSummary-03/" rel="next" title="2019CCBSummary-03">
+          <i class="fa fa-chevron-left"></i> 2019CCBSummary-03
+        </a>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/13/2019CCBSummary-04/" data-id="ck8xeequ6000144ud5j8rh0kb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/04/13/2019CCBSummary-03/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">2019CCBSummary-03</div>
-    </a>
-  
-</nav>
 
-  
-</article>
+    <span class="post-nav-divider"></span>
 
-</section>
-        
-          <aside id="sidebar">
-  
+    <div class="post-nav-prev post-nav-item">
     
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
     </div>
   </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-04/">2019CCBSummary-04</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-03/">2019CCBSummary-03</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-02/">2019CCBSummary-02</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/2019CCBSummary-01/">2019CCBSummary#01</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Styphon<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2020</span>
+      
+      <span class="author"><i class="fa fa-user"></i>Styphon</span>
     </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon" target="_blank" rel="noopener">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
   </div>
-</body>
+</div>
+
+    </main>
+  </body>
 </html>

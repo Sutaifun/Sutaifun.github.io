@@ -1,94 +1,118 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>Styphon&#39;s Site</title>
+  
+<link rel="stylesheet" href="/css/styles.css">
 
   
-  <title>2019CCBSummary-03 | Styphon&#39;s Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第三次实验问题汇总 写在前面，并且希望大家认真地读一下第二次上机实验，大家的答题情况不甚理想，基于这个情况，第三次上机实验的题目难度相比往届有所下降。但是这一次实验，大家的答题效果仍然不理想。群里面问问题的同学并不算多，而且有很多之前就讲过的问题。其实对于我而言，本次实验题目里出现的易错点多问我几次，我倒也是无所谓，可能同学们没有意识到自己的代码问题出在哪里，掉进了哪个坑，我作为助教还是很乐意去引">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2019CCBSummary-03">
-<meta property="og:url" content="http://yoursite.com/2020/04/13/2019CCBSummary-03/">
-<meta property="og:site_name" content="Styphon&#39;s Site">
-<meta property="og:description" content="第三次实验问题汇总 写在前面，并且希望大家认真地读一下第二次上机实验，大家的答题情况不甚理想，基于这个情况，第三次上机实验的题目难度相比往届有所下降。但是这一次实验，大家的答题效果仍然不理想。群里面问问题的同学并不算多，而且有很多之前就讲过的问题。其实对于我而言，本次实验题目里出现的易错点多问我几次，我倒也是无所谓，可能同学们没有意识到自己的代码问题出在哪里，掉进了哪个坑，我作为助教还是很乐意去引">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-12T18:44:18.000Z">
-<meta property="article:modified_time" content="2020-04-12T18:44:41.313Z">
-<meta property="article:author" content="Styphon">
-<meta name="twitter:card" content="summary">
+<script src="/lib/jquery.js"></script>
+
   
-    <link rel="alternate" href="/atom.xml" title="Styphon&#39;s Site" type="application/atom+xml">
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+
   
+<script src="/js/common.js"></script>
+
   
-    <link rel="icon" href="/favicon.png">
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Styphon&#39;s Site</a>
-      </h1>
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
       
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">Styphon&#39;s Site</a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
       </div>
-    </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" target="_blank" rel="noopener" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-2019CCBSummary-03" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/13/2019CCBSummary-03/" class="article-date">
-  <time datetime="2020-04-12T18:44:18.000Z" itemprop="datePublished">2020-04-13</time>
-</a>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
     
-  </div>
-  <div class="article-inner">
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
     
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      2019CCBSummary-03
-    </h1>
-  
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" target="_blank" rel="noopener" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第三次实验问题汇总"><a href="#第三次实验问题汇总" class="headerlink" title="第三次实验问题汇总"></a>第三次实验问题汇总</h1><hr>
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">2019CCBSummary-03</h2>
+       
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2020-04-13</span>
+    </div>
+    <div class="post-content">
+      <h1 id="第三次实验问题汇总"><a href="#第三次实验问题汇总" class="headerlink" title="第三次实验问题汇总"></a>第三次实验问题汇总</h1><hr>
 <h3 id="写在前面，并且希望大家认真地读一下"><a href="#写在前面，并且希望大家认真地读一下" class="headerlink" title="写在前面，并且希望大家认真地读一下"></a>写在前面，并且希望大家认真地读一下</h3><p>第二次上机实验，大家的答题情况不甚理想，基于这个情况，第三次上机实验的题目难度相比往届有所下降。但是这一次实验，大家的答题效果仍然不理想。群里面问问题的同学并不算多，而且有很多之前就讲过的问题。其实对于我而言，本次实验题目里出现的易错点多问我几次，我倒也是无所谓，可能同学们没有意识到自己的代码问题出在哪里，掉进了哪个坑，我作为助教还是很乐意去引导同学们走出坑的。但是对于一些应当在第一次实验或者第二次实验就掌握的知识点，我在被反复问到这些问题的时候，难免会觉得有些难受。所以为了提高大家的学习效率和独立解决问题的能力，我写了这段话，希望每位同学都能仔细地读一下这段话。<br>这学期到目前为止都是网上授课，可能对于其他科目而言是比较难受的，但是对于这门课程我认为更加便利。因为在老师讲课的过程中，同学们可以随时在本地进行测试，以便在课堂上掌握新知识。OJ系统上17级的部分题目大家都可以查看到，老师也督促过大家完成那些题目。大家要稍微多做一点题目，旨在熟悉Python的各种操作，包括基本语法，调试技巧等等。如果觉得OJ系统上的题目不够，可以在洛谷等网站上找题目。<br>接下来说的就是跟上机实验关系很紧密的事情。可能这学期没有助教手把手的指导实验，而是单纯在线针对代码进行答疑，所以有一些东西没有传达到。一下说的几点，我希望大家能够谨记于心。  </p>
 <ul>
 <li>虽然目前还没有涉及到较复杂的算法的题目，但是只要没有120%的把握能够十分顺利地写代码，<strong>请把草稿纸和笔放在面前。</strong> 在拿到题目的时候，用自己特有的方式在纸上记录下你的思路。比如需要什么变量，第一步怎么处理变量，怎么分支之类的；  </li>
@@ -177,130 +201,53 @@
 <p><code>dis</code>只有01，满足要求，输出<code>&#39;YES&#39;</code></p>
 </blockquote>
 
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2020/04/13/2019CCBSummary-02/" rel="next" title="2019CCBSummary-02">
+          <i class="fa fa-chevron-left"></i> 2019CCBSummary-02
+        </a>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/13/2019CCBSummary-03/" data-id="ck8xeequ7000244ud28hmg6r4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
     
-<nav id="article-nav">
-  
-    <a href="/2020/04/13/2019CCBSummary-04/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          2019CCBSummary-04
-        
+        <a href="/2020/04/13/2019CCBSummary-04/" rel="prev" title="2019CCBSummary-04">
+          2019CCBSummary-04 <i class="fa fa-chevron-right"></i>
+        </a>
+      
+    </div>
+  </div>
+
+
+
       </div>
-    </a>
-  
-  
-    <a href="/2020/04/13/2019CCBSummary-02/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">2019CCBSummary-02</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2020</span>
+      
+      <span class="author"><i class="fa fa-user"></i>Styphon</span>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-04/">2019CCBSummary-04</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-03/">2019CCBSummary-03</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-02/">2019CCBSummary-02</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/2019CCBSummary-01/">2019CCBSummary#01</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Styphon<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon" target="_blank" rel="noopener">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
   </div>
-</body>
+</div>
+
+    </main>
+  </body>
 </html>

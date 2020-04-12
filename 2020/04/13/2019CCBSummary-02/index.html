@@ -1,94 +1,118 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>Styphon&#39;s Site</title>
+  
+<link rel="stylesheet" href="/css/styles.css">
 
   
-  <title>2019CCBSummary-02 | Styphon&#39;s Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第二次实验问题汇总 A.FizzBuzz常见问题 分支条件不充分（这个是假想问题。本地可以排除，所以OJ上不会体现）错误示范123456789101112131415n &#x3D; int(input())data &#x3D; []for i in range(n):    x &#x3D; int(input())    data.append(x)for a in data:    if a%3 &#x3D;&#x3D; 0:">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2019CCBSummary-02">
-<meta property="og:url" content="http://yoursite.com/2020/04/13/2019CCBSummary-02/">
-<meta property="og:site_name" content="Styphon&#39;s Site">
-<meta property="og:description" content="第二次实验问题汇总 A.FizzBuzz常见问题 分支条件不充分（这个是假想问题。本地可以排除，所以OJ上不会体现）错误示范123456789101112131415n &#x3D; int(input())data &#x3D; []for i in range(n):    x &#x3D; int(input())    data.append(x)for a in data:    if a%3 &#x3D;&#x3D; 0:">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-12T18:43:21.000Z">
-<meta property="article:modified_time" content="2020-04-12T18:44:14.299Z">
-<meta property="article:author" content="Styphon">
-<meta name="twitter:card" content="summary">
+<script src="/lib/jquery.js"></script>
+
   
-    <link rel="alternate" href="/atom.xml" title="Styphon&#39;s Site" type="application/atom+xml">
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+
   
+<script src="/js/common.js"></script>
+
   
-    <link rel="icon" href="/favicon.png">
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Styphon&#39;s Site</a>
-      </h1>
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
       
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">Styphon&#39;s Site</a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
       </div>
-    </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" target="_blank" rel="noopener" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-2019CCBSummary-02" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/13/2019CCBSummary-02/" class="article-date">
-  <time datetime="2020-04-12T18:43:21.000Z" itemprop="datePublished">2020-04-13</time>
-</a>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
     
-  </div>
-  <div class="article-inner">
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
     
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      2019CCBSummary-02
-    </h1>
-  
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" target="_blank" rel="noopener" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第二次实验问题汇总"><a href="#第二次实验问题汇总" class="headerlink" title="第二次实验问题汇总"></a>第二次实验问题汇总</h1><hr>
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">2019CCBSummary-02</h2>
+       
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2020-04-13</span>
+    </div>
+    <div class="post-content">
+      <h1 id="第二次实验问题汇总"><a href="#第二次实验问题汇总" class="headerlink" title="第二次实验问题汇总"></a>第二次实验问题汇总</h1><hr>
 <h2 id="A-FizzBuzz"><a href="#A-FizzBuzz" class="headerlink" title="A.FizzBuzz"></a><font color=0033FF>A.FizzBuzz</font></h2><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
 <li>分支条件不充分（这个是假想问题。本地可以排除，所以OJ上不会体现）<h4 id="错误示范"><a href="#错误示范" class="headerlink" title="错误示范"></a><font color=#FF5E5E>错误示范</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line">data = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    x = int(input())</span><br><span class="line">    data.append(x)</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> data:</span><br><span class="line">    <span class="keyword">if</span> a%<span class="number">3</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'fizz'</span>)</span><br><span class="line">    <span class="keyword">elif</span> a%<span class="number">5</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'buzz'</span>)</span><br><span class="line">    <span class="keyword">elif</span> a%<span class="number">15</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'fizzbuzz'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(a)</span><br><span class="line"><span class="comment">#这样的话可以被15整除的都会输出fizz而不是fizzbuzz</span></span><br></pre></td></tr></table></figure>
 <h4 id="正确答案"><a href="#正确答案" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line">data = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    x = int(input())</span><br><span class="line">    data.append(x)</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> data:</span><br><span class="line">    <span class="keyword">if</span> a%<span class="number">3</span> == <span class="number">0</span> <span class="keyword">and</span> a%<span class="number">5</span> != <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'fizz'</span>)</span><br><span class="line">    <span class="keyword">elif</span> a%<span class="number">5</span> == <span class="number">0</span> <span class="keyword">and</span> a%<span class="number">3</span> != <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'buzz'</span>)</span><br><span class="line">    <span class="keyword">elif</span> a%<span class="number">15</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'fizzbuzz'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(a)</span><br><span class="line"><span class="comment">#判断条件要更充分</span></span><br></pre></td></tr></table></figure>
@@ -137,130 +161,53 @@
 <li>没有注意到除法会将数据转换为浮点数，而浮点数精度可能出现问题<h4 id="正确答案-5"><a href="#正确答案-5" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line">con = []</span><br><span class="line">prod = <span class="number">1</span>                                <span class="comment">#记录所有除数的乘积</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    x, y = map(int, input().split())</span><br><span class="line">    prod *= x</span><br><span class="line">    con.append((x, y))                  <span class="comment">#每一个元素是一个元组，第一项是除数，第二项是余数</span></span><br><span class="line">rev = []                                <span class="comment">#存储每个除数的“逆”</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> con:</span><br><span class="line">    i = <span class="number">1</span>                               <span class="comment">#while循环变量赋初值</span></span><br><span class="line">    att = prod // item[<span class="number">0</span>]               <span class="comment">#注意此处使用地板除来消除python浮点数运算精度不高的问题</span></span><br><span class="line">    <span class="keyword">while</span> att * i % item[<span class="number">0</span>] != <span class="number">1</span>:</span><br><span class="line">        i += <span class="number">1</span>                          <span class="comment">#逐一寻找“逆”</span></span><br><span class="line">    rev.append(att * i)                 <span class="comment">#将“逆”存起来</span></span><br><span class="line">ans = <span class="number">0</span>                                 <span class="comment">#下面求和用的for循环变量赋初值</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    ans += con[i][<span class="number">1</span>] * rev[i]           <span class="comment">#根据公式把ak+b形式算出来</span></span><br><span class="line">ans = ans % prod                        <span class="comment">#取最小的可能值</span></span><br><span class="line"><span class="keyword">if</span> ans == <span class="number">0</span>:                            <span class="comment">#确保输出正整数</span></span><br><span class="line">    ans = prod</span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2020/04/11/2019CCBSummary-01/" rel="next" title="2019CCBSummary#01">
+          <i class="fa fa-chevron-left"></i> 2019CCBSummary#01
+        </a>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/13/2019CCBSummary-02/" data-id="ck8xeequ2000044ud9onj9ckh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
     
-<nav id="article-nav">
-  
-    <a href="/2020/04/13/2019CCBSummary-03/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          2019CCBSummary-03
-        
+        <a href="/2020/04/13/2019CCBSummary-03/" rel="prev" title="2019CCBSummary-03">
+          2019CCBSummary-03 <i class="fa fa-chevron-right"></i>
+        </a>
+      
+    </div>
+  </div>
+
+
+
       </div>
-    </a>
-  
-  
-    <a href="/2020/04/11/2019CCBSummary-01/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">2019CCBSummary#01</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2020</span>
+      
+      <span class="author"><i class="fa fa-user"></i>Styphon</span>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-04/">2019CCBSummary-04</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-03/">2019CCBSummary-03</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/13/2019CCBSummary-02/">2019CCBSummary-02</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/2019CCBSummary-01/">2019CCBSummary#01</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Styphon<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon" target="_blank" rel="noopener">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
   </div>
-</body>
+</div>
+
+    </main>
+  </body>
 </html>
