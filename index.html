@@ -106,8 +106,8 @@
 
 <section class="banner">
   <div class="headintro">
-    <p class="title">HELLO, IM CORA</p>
-    <p class="subtitle">三流代码 &amp; 一流Bug</p>
+    <p class="title">HELLO, IM STYPHON</p>
+    <p class="subtitle">他很懒，这里还没有写下什么</p>
   </div>
 </section>
 
@@ -223,7 +223,7 @@
 <li><strong>要养成独立解决问题的能力。</strong> 助教们和老师反复说过一句话，考试的时候没有人答疑。而考试前面的这些上机实验，当然也有培养同学们独立解决问题能力的目的。代码WA了或者报错了之后第一个想到的不能是助教或者老师，也不能是别的同学，而应该是自己。当出现问题时，先检查有没有语法问题。请善用课件、实验指导和错题本，如果之前的知识点忘记了，请翻看之前的实验指导或者自己的实验报告。  </li>
 <li><strong>要学会看程序的报错。</strong> Python在报错的时候，会显示好几行。前面的几行是告诉你问题大概出在哪里，这个是指<strong>编译器在编译到这里的时候发现了问题，而不一定是指问题出在这里，</strong> 所以你有时需要往前面看几行才能发现问题。再往下一行，会显示<code>xxx: xxxxxxxx.</code>之类的一句话。其中前面的是报错的类别，后面的是具体的错误。读懂报错不需要太强的英语能力，最多是几个单词不认识，请善用百度翻译。</li>
 <li><strong>本地测试通过了不能说明代码没有问题！</strong> 本地测试通过了只能说明你的代码没有语法错误，请自行构造其他满足输入条件的数据进行测试。在构造条件时请多构造一些奇怪的数据，要抱着“怎么能让我的代码出错”的心态测试自己的程序。如果OJ上得了接近满分，则一般是特殊情况或者临界值没有考虑到，请加强对临界值或特殊情况的判断。  </li>
-<li><strong><font color=#FF0000>WA=Wrong Answer, TLE=Time Limit Exceed, PE=Presentation Error.</font></strong> PE一般是空白符输出有问题，输出字母大小写有问题。TLE一般是时间复杂度过高或者出现死循环。有关时间复杂度的相关知识请参阅往期由 <strong><font color=0088BB>Marvolo（周海涛）大佬</font></strong> 编撰的《Python周报》。出现死循环则一般是由<code>while</code>循环引起的。如果在本地运行时发生死循环，请使用<kbd>Ctrl</kbd>+<kbd>C</kbd>强制终止程序。一般不会遇到其他OJ报错。如果遇到CE，检查自己提交的语言是否为Python3.  </li>
+<li><strong><font color=#FF0000>WA=Wrong Answer, TLE=Time Limit Exceed, PE=Presentation Error.</font></strong> PE一般是空白符输出有问题，输出字母大小写有问题。TLE一般是时间复杂度过高或者出现死循环。有关时间复杂度的相关知识请参阅往期由 <strong><font color=0088BB>Marvolo大佬</font></strong> 编撰的《Python周报》。出现死循环则一般是由<code>while</code>循环引起的。如果在本地运行时发生死循环，请使用<kbd>Ctrl</kbd>+<kbd>C</kbd>强制终止程序。一般不会遇到其他OJ报错。如果遇到CE，检查自己提交的语言是否为Python3.  </li>
 <li><strong>写代码要细心，注意检查语法问题。</strong> 很多人在编程的时候漏掉了函数和方法后的括号。<strong>函数和方法只有在加括号之后才表示调用，不加括号表示的是函数本身！</strong> 所以哪怕这个函数或方法不需要传参数，也请务必带上括号。<blockquote>
 <p>举例:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [bin, oct, hex]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line"><span class="meta">... </span>    print(i(<span class="number">16</span>))</span><br><span class="line">...</span><br><span class="line"><span class="number">0b10000</span></span><br><span class="line"><span class="number">0o20</span></span><br><span class="line"><span class="number">0x10</span></span><br></pre></td></tr></table></figure>
@@ -234,7 +234,7 @@
 <li>最后，在获得别人的帮助之后， <strong>请更新错题本。</strong> 这样大家在遇到同样的问题时就可以通过错题本来解决自己的问题了。  </li>
 </ul>
 <p>时刻谨记，本门课程所教授的不仅仅是如何编写Python程序，更重要的是计算思维以及自我解决问题的能力。<br>我十分希望大家能够享受这门课程，我也会尽自己的能力帮助大家学好这门课程。  </p>
-<p><em>斯太芬（曹宇豪） 写于 04/04/2020</em></p>
+<p><em>斯太芬 写于 04/04/2020</em></p>
 <hr>
 <h2 id="A-利息计算"><a href="#A-利息计算" class="headerlink" title="A.利息计算"></a><font color=#0033FF>A.利息计算</font></h2><p>需要注意题目并没有提到每期摊还的本金一定是整数，所以不要使用地板除。另外涉及到浮点数的判断时，受精度问题影响，不要直接使用<code>==</code>或者<code>!=</code>来判断，否则容易无法跳出循环。如果循环次数已知，则使用<code>for...</code>循环完成；如必须使用<code>while</code>，则使用诸如<code>while abs(x-y)&lt;0.000001:</code>或者<code>while abs(x-y)&gt;0.000001:</code>这样的形式。  </p>
 <h4 id="错误示范"><a href="#错误示范" class="headerlink" title="错误示范"></a><font color=#FF5E5E>错误示范</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> N != <span class="number">0</span>:</span><br><span class="line"><span class="comment"># 在遇到某些数据，比如本金100分17期还的时候，N可能会十分接近但不等于0，从而无法跳出循环</span></span><br></pre></td></tr></table></figure>
