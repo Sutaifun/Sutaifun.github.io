@@ -17,7 +17,7 @@ body {
   background-image: -webkit-radial-gradient(50% 0, ellipse farthest-corner, #dbf5f1 0%, #9be4d8 100%);
   background-image: radial-gradient(ellipse farthest-corner at 50% 0, #dbf5f1 0%, #9be4d8 100%);
   overflow-x: hidden;
-  font-family: Lato, "Microsoft YaHei", sans-serif;
+  font-family: Lato, "Microsoft YaHei", monospace;
   font-weight: 400;
 }
 .container {
@@ -575,7 +575,7 @@ pre,
 xmp,
 plaintext,
 listing {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Consolas, "Courier New", monospace;
 }
 table {
   font-weight: 400;
@@ -589,7 +589,7 @@ table {
 .code {
   padding: 2px 4px;
   font-size: 90%;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Consolas, "Courier New", monospace;
   background-color: #f9f9f9;
   border-radius: 3px;
 }
