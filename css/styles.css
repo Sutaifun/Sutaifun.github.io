@@ -17,7 +17,7 @@ body {
   background-image: -webkit-radial-gradient(50% 0, ellipse farthest-corner, #dbf5f1 0%, #9be4d8 100%);
   background-image: radial-gradient(ellipse farthest-corner at 50% 0, #dbf5f1 0%, #9be4d8 100%);
   overflow-x: hidden;
-  font-family: Lato, "Microsoft YaHei", monospace;
+  font-family: Lato, "Microsoft YaHei", sans-serif;
   font-weight: 400;
 }
 .container {
