@@ -119,36 +119,187 @@
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>可能有同学注意到了，后面几次的实验总结少了“错误示范”这个板块。因为现阶段已经很少有能够反映大家共有问题的十分典型的错误代码了，而且哪怕是相同的处理，不同的人写出来的代码也可能大相径庭。所以我删去了这个板块，希望大家在每一道题前面的描述里排除错误。如果出现了典型代码，我还是会放在总结里的。<br>——<em>斯太芬</em></p>
 <hr>
 <h2 id="A-逛超市"><a href="#A-逛超市" class="headerlink" title="A.逛超市"></a><font color=#0033FF>A.逛超市</font></h2><p>这道题目按理来说，不应该使用递归的方法，老老实实迭代才是即好想又好实现还省时省空间的方法。但是递归也可以做，而且不难。<br>常见的问题出在有些同学按照实验指导书上的思路决定递归，但是使用了两个函数分别表示优购和超市发的同学数量。<br>还有一些同学对变量的作用域不太清楚。在这里记住，如果在函数里面要用到函数外的变量，统统<code>global</code>一下就没有问题了，如果想在函数外用到函数里的变量，emmmmmm，尽量不要有这种想法，如果要这样做就作为返回值<code>return</code>给函数外界。  </p>
-<h4 id="正确答案"><a href="#正确答案" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x, y, n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> x, y</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> f(<span class="number">0.2</span>*x+<span class="number">0.6</span>*y, <span class="number">0.8</span>*x+<span class="number">0.4</span>*y, n<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">n = int(input())</span><br><span class="line">x, y = map(int, input().split())</span><br><span class="line">x, y = f(x, y, n)</span><br><span class="line">print(int(x), int(y))</span><br></pre></td></tr></table></figure>
+<h4 id="正确答案"><a href="#正确答案" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x, y, n)</span>:</span>
+    <span class="keyword">if</span> n == <span class="number">1</span>:
+        <span class="keyword">return</span> x, y
+    <span class="keyword">else</span>:
+        <span class="keyword">return</span> f(<span class="number">0.2</span>*x+<span class="number">0.6</span>*y, <span class="number">0.8</span>*x+<span class="number">0.4</span>*y, n<span class="number">-1</span>)
+
+n = int(input())
+x, y = map(int, input().split())
+x, y = f(x, y, n)
+print(int(x), int(y))</code></pre>
 <p>这里，为什么我的函数传了三个参数进去呢？因为事实上，迭代/递归的层数是已知的，而且无法通过去超市发和优购的人数判断递归终止条件，所以传入一个额外的参数来表示递归层数。  </p>
-<h4 id="优化解法"><a href="#优化解法" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line">x, y = map(int, input().split())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    x, y = <span class="number">0.2</span>*x+<span class="number">0.6</span>*y, <span class="number">0.8</span>*x+<span class="number">0.4</span>*y</span><br><span class="line">print(int(x), int(y))</span><br></pre></td></tr></table></figure>
+<h4 id="优化解法"><a href="#优化解法" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><pre><code class="python">n = int(input())
+x, y = map(int, input().split())
+<span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+    x, y = <span class="number">0.2</span>*x+<span class="number">0.6</span>*y, <span class="number">0.8</span>*x+<span class="number">0.4</span>*y
+print(int(x), int(y))</code></pre>
 <p>大家自行感受一下。  </p>
 <hr>
 <h2 id="B-淡黄的长裙"><a href="#B-淡黄的长裙" class="headerlink" title="B.淡黄的长裙"></a><font color=#0033FF>B.淡黄的长裙</font></h2><p>这道题目是一道比较简单的遍历算法的题目，只需要遍历所有可能的价值取值，然后找出与心理预期差距最小的一个即可。<br>出现的比较多的问题是在一些特殊情况的处理上有一些问题，比如说推到小于4个方块的时候，还有一个问题是题意理解有误。注意题目所说的是那个圈住价格的方框长度为4，你所选的价格不足4位数的情况只可能发生在你把方块推到不足4个，而不是心理预期价位是几位数，方框就能圈住几个方块。  </p>
-<h4 id="正确答案-1"><a href="#正确答案-1" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">    s, p = input().split(<span class="string">','</span>)</span><br><span class="line">    p = int(p)</span><br><span class="line">    s = <span class="string">'0000'</span>+s                        <span class="comment"># 提前加4个0避免特判</span></span><br><span class="line">    m = <span class="number">9999</span>                            <span class="comment"># 注意我们要求的是最小值，所以初始值一定要足够大</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(s)<span class="number">-4</span>):           <span class="comment"># 这里可以看到是从前向后遍历，也就是从推到一个都不剩的时候开始的</span></span><br><span class="line">        t = int(s[j:j+<span class="number">4</span>])               <span class="comment"># 字符串切片，对应方框圈住4个方块</span></span><br><span class="line">        <span class="keyword">if</span> abs(t-p) &lt; m:                <span class="comment"># 注意这里不等号的使用</span></span><br><span class="line">            l = j                       <span class="comment"># 存储的是找到最小值时的索引</span></span><br><span class="line">            m = abs(t-p)</span><br><span class="line">    print(len(s)-l<span class="number">-5</span>)                   <span class="comment"># 直接通过先前存储的索引计算输出值，不用再用.index()找索引</span></span><br></pre></td></tr></table></figure>
+<h4 id="正确答案-1"><a href="#正确答案-1" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="python">n = int(input())
+<span class="keyword">for</span> _ <span class="keyword">in</span> range(n):
+    s, p = input().split(<span class="string">','</span>)
+    p = int(p)
+    s = <span class="string">'0000'</span>+s                        <span class="comment"># 提前加4个0避免特判</span>
+    m = <span class="number">9999</span>                            <span class="comment"># 注意我们要求的是最小值，所以初始值一定要足够大</span>
+    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(s)<span class="number">-4</span>):           <span class="comment"># 这里可以看到是从前向后遍历，也就是从推到一个都不剩的时候开始的</span>
+        t = int(s[j:j+<span class="number">4</span>])               <span class="comment"># 字符串切片，对应方框圈住4个方块</span>
+        <span class="keyword">if</span> abs(t-p) &lt; m:                <span class="comment"># 注意这里不等号的使用</span>
+            l = j                       <span class="comment"># 存储的是找到最小值时的索引</span>
+            m = abs(t-p)
+    print(len(s)-l<span class="number">-5</span>)                   <span class="comment"># 直接通过先前存储的索引计算输出值，不用再用.index()找索引</span></code></pre>
 <p>这里不等号的使用主要取决于以下这一点：当你碰到与当前的最大/最小值相等的值的时候，需不需要替换。比如这里，由于我相当于是逆向找解，所以原题要求推方块最多的解，我这里就需要找到的是第一次遇到的解。所以我用的是小于号而不是小于等于号。这样保留的就是第一次遇到的了；如果我是正向找解，也就是模拟游戏过程，从最右边开始4个4个切片，那么我其实是需要保留更靠后的结果的，所以这样的话就需要用小于等于号。<br>关于《Python周报》中提到的一些问题，可以看到Marvolo大佬很喜欢用整型数处理问题，而我给出的代码使用字符串处理问题会多一些。Marvolo是<br>C/C++出身，所以他的代码风格会偏向C/C++一些。这里，我给出的代码，使用的是字符串处理这道题目。但是我并没有任何多余的数据类型转换。我看到很多同学的代码有多余的数据类型转换，这样很费时间，所以转换数据类型的时候，只做必要的部分。而且对于整数进行运算确实比对字符串进行运算要更快，只是目前我们所涉及到的代码还不足以体现这两者的区别。字符串可以帮助我们更直观地理解代码的工作进程，但是在复杂运算的时候，我们还是应该采用整型数据来节约时间。<br>看下面的样例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s, p = map(int, input().split(<span class="string">','</span>))</span><br><span class="line">s = str(s)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">s, p = map(int, input().split(<span class="string">','</span>))
+s = str(s)</code></pre>
 <p>这两行代码可以替换掉我上面的程序的两行代码，效果不变。但是我的代码只进行了一次数据类型转换，而这个代码进行了三次类型转换，而且<code>s</code>这个变量则是先从<code>str</code>转换为<code>int</code>，又转换为了<code>str</code>，明显是多此一举的行为，而且进行一次数据转换的运算量可比进行一次赋值运算要大得多。所以要避免不必要的数据类型转换。  </p>
 <hr>
 <h2 id="C-排列组合"><a href="#C-排列组合" class="headerlink" title="C.排列组合"></a><font color=#0033FF>C.排列组合</font></h2><p>标题是排列组合，其实是组合。典型的深度优先遍历，需要配合全局变量。这里的字典序一定要注意，<code>12</code>作为一个整数元素的时候，是在<code>2</code>之后的。有的同学试图在使用字符串存储结果后用<code>.sort()</code>方法完成排序，但是这样的话<code>&#39;12&#39;</code>按照字符串字典序是在<code>&#39;2&#39;</code>之前的，所以这里不能使用字符串。当然更好的方法就是在遍历的时候就按照字典序一个一个找出来。  </p>
-<h4 id="正确答案-2"><a href="#正确答案-2" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(p)</span>:</span>                             <span class="comment"># 这里传入的参数p是标记位置的</span></span><br><span class="line">    <span class="keyword">global</span> mark                         <span class="comment"># 定义全局变量</span></span><br><span class="line">    s = sum(mark)                       <span class="comment"># 如果选中m个，那么输出这种情况，并结束这个分支</span></span><br><span class="line">    <span class="keyword">if</span> s == m:</span><br><span class="line">        print_()</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> p &gt;= n:                      <span class="comment"># 标记超出边界，结束分支</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            mark[p] = <span class="number">1</span>                 <span class="comment"># 选中标记位置的情况</span></span><br><span class="line">            dfs(p+<span class="number">1</span>)</span><br><span class="line">            mark[p] = <span class="number">0</span>                 <span class="comment"># 不选标记位置的情况</span></span><br><span class="line">            dfs(p+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">if</span> mark[i]:</span><br><span class="line">            print(<span class="string">"%d"</span>%(i+<span class="number">1</span>), end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">n, m = map(int, input().split())</span><br><span class="line">mark = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]            <span class="comment"># 0表示没有选，1表示选中</span></span><br><span class="line">dfs(<span class="number">0</span>)                                  <span class="comment"># 从第0个位置，也就是1开始选</span></span><br></pre></td></tr></table></figure>
+<h4 id="正确答案-2"><a href="#正确答案-2" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(p)</span>:</span>                             <span class="comment"># 这里传入的参数p是标记位置的</span>
+    <span class="keyword">global</span> mark                         <span class="comment"># 定义全局变量</span>
+    s = sum(mark)                       <span class="comment"># 如果选中m个，那么输出这种情况，并结束这个分支</span>
+    <span class="keyword">if</span> s == m:
+        print_()
+        <span class="keyword">return</span>
+    <span class="keyword">else</span>:
+        <span class="keyword">if</span> p &gt;= n:                      <span class="comment"># 标记超出边界，结束分支</span>
+            <span class="keyword">return</span>
+        <span class="keyword">else</span>:
+            mark[p] = <span class="number">1</span>                 <span class="comment"># 选中标记位置的情况</span>
+            dfs(p+<span class="number">1</span>)
+            mark[p] = <span class="number">0</span>                 <span class="comment"># 不选标记位置的情况</span>
+            dfs(p+<span class="number">1</span>)
+
+
+<span class="function"><span class="keyword">def</span> <span class="title">print_</span><span class="params">()</span>:</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+        <span class="keyword">if</span> mark[i]:
+            print(<span class="string">"%d"</span>%(i+<span class="number">1</span>), end=<span class="string">' '</span>)
+    print()
+
+n, m = map(int, input().split())
+mark = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]            <span class="comment"># 0表示没有选，1表示选中</span>
+dfs(<span class="number">0</span>)                                  <span class="comment"># 从第0个位置，也就是1开始选</span></code></pre>
 <p>单独看代码可能有点难以理解，这里以5选3为例，说明一下过程：  </p>
 <blockquote>
 <p>首先<code>mark</code>是<code>[0, 0, 0, 0, 0]</code>，从左到右分别代表1, 2, 3, 4, 5的选择情况<br>然后看图8<br><img src="https://www.z4a.net/images/2020/04/20/5.jpg" alt="5.jpg"></p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n, m = map(int, input().split())</span><br><span class="line">l = [[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">2</span>-m)]</span><br><span class="line"><span class="keyword">while</span> len(l[<span class="number">0</span>]) &lt; m:</span><br><span class="line">    temp = l.pop(<span class="number">0</span>)</span><br><span class="line">    s = temp[<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(s+<span class="number">1</span>, n - m + len(temp) + <span class="number">2</span>):</span><br><span class="line">        l.append(temp + [i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> l:</span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> t:</span><br><span class="line">        print(r, end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
+<pre><code class="python">n, m = map(int, input().split())
+l = [[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">2</span>-m)]
+<span class="keyword">while</span> len(l[<span class="number">0</span>]) &lt; m:
+    temp = l.pop(<span class="number">0</span>)
+    s = temp[<span class="number">-1</span>]
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(s+<span class="number">1</span>, n - m + len(temp) + <span class="number">2</span>):
+        l.append(temp + [i])
+
+<span class="keyword">for</span> t <span class="keyword">in</span> l:
+    <span class="keyword">for</span> r <span class="keyword">in</span> t:
+        print(r, end=<span class="string">' '</span>)
+    print()</code></pre>
 <p>另一个思路是使用队列，大家可以自行感受一下，比较简单。</p>
 <hr>
 <h2 id="D-买辣条（选做）"><a href="#D-买辣条（选做）" class="headerlink" title="D.买辣条（选做）"></a><font color=#0033FF>D.买辣条（选做）</font></h2><p><del>这道题目是我在吃辣条的时候想出来的</del>，与上一道题目比较相似，不过需要求出全排列。  </p>
-<h4 id="正确答案-3"><a href="#正确答案-3" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fp</span><span class="params">(l)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [l]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">            nl = l[:]</span><br><span class="line">            nl.remove(i)</span><br><span class="line">            xl = fp(nl)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xl:</span><br><span class="line">                ans.append([i]+j)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">n = int(input())</span><br><span class="line">l = list(map(int, input().split()))</span><br><span class="line">p = fp([i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)])</span><br><span class="line">m = n*n</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> p:</span><br><span class="line">    s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        s += l[j] % i[j]</span><br><span class="line">    <span class="keyword">if</span> s &lt; m:</span><br><span class="line">        m = s</span><br><span class="line">print(m)</span><br></pre></td></tr></table></figure>
+<h4 id="正确答案-3"><a href="#正确答案-3" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">fp</span><span class="params">(l)</span>:</span>
+    <span class="keyword">if</span> len(l) == <span class="number">1</span>:
+        <span class="keyword">return</span> [l]
+    <span class="keyword">else</span>:
+        ans = []
+        <span class="keyword">for</span> i <span class="keyword">in</span> l:
+            nl = l[:]
+            nl.remove(i)
+            xl = fp(nl)
+            <span class="keyword">for</span> j <span class="keyword">in</span> xl:
+                ans.append([i]+j)
+        <span class="keyword">return</span> ans
+
+n = int(input())
+l = list(map(int, input().split()))
+p = fp([i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)])
+m = n*n
+<span class="keyword">for</span> i <span class="keyword">in</span> p:
+    s = <span class="number">0</span>
+    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):
+        s += l[j] % i[j]
+    <span class="keyword">if</span> s &lt; m:
+        m = s
+print(m)</code></pre>
 <p>我所给出的方法没有用到全局变量，采用的是一个很容易理解的递归思路，很多同学也是尝试使用这个思路。这样做的话，最后一个数据点的运行时间通常在2000ms以上，内存占用在66000KB以上，是一个对时空要求都比较高的方法。<br>如果使用类似于上一道题目里队列的做法，那么最后一个数据点会<font color=#FF0000>TLE</font>，递归但是常数稍大的也会<font color=#FF0000>TLE</font>，所以最好还是使用类似于上一道题目里的方法。  </p>
-<h4 id="优化解法-1"><a href="#优化解法-1" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Dfs</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> ans,cnt</span><br><span class="line">    <span class="keyword">if</span> (x==n):</span><br><span class="line">        ans=min(ans,cnt)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    <span class="keyword">if</span> (v[i]==<span class="number">0</span>):</span><br><span class="line">        v[i]=<span class="number">1</span></span><br><span class="line">        cnt+=a[x]%(i+<span class="number">1</span>)</span><br><span class="line">        Dfs(x+<span class="number">1</span>)</span><br><span class="line">        cnt-=a[x]%(i+<span class="number">1</span>)</span><br><span class="line">        v[i]=<span class="number">0</span></span><br><span class="line">n=int(input())</span><br><span class="line">a=list(map(int,input().split()))</span><br><span class="line">ans=<span class="number">0x3f3f3f3f</span></span><br><span class="line">cnt=<span class="number">0</span></span><br><span class="line">v=[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">Dfs(<span class="number">0</span>)</span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure>
+<h4 id="优化解法-1"><a href="#优化解法-1" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">Dfs</span><span class="params">(x)</span>:</span>
+    <span class="keyword">global</span> ans,cnt
+    <span class="keyword">if</span> (x==n):
+        ans=min(ans,cnt)
+        <span class="keyword">return</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+    <span class="keyword">if</span> (v[i]==<span class="number">0</span>):
+        v[i]=<span class="number">1</span>
+        cnt+=a[x]%(i+<span class="number">1</span>)
+        Dfs(x+<span class="number">1</span>)
+        cnt-=a[x]%(i+<span class="number">1</span>)
+        v[i]=<span class="number">0</span>
+n=int(input())
+a=list(map(int,input().split()))
+ans=<span class="number">0x3f3f3f3f</span>
+cnt=<span class="number">0</span>
+v=[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]
+Dfs(<span class="number">0</span>)
+print(ans)</code></pre>
 <p>照抄周报了，大家轻点喷。  </p>
 <h4 id="奇怪的解法"><a href="#奇怪的解法" class="headerlink" title="奇怪的解法"></a><font color=#9966FF>奇怪的解法</font></h4><p>这一部分由于非常超纲，就不放代码了，感兴趣的同学可以自行了解一下。<br>周报中提及的状态压缩动态规划可以解决这道题目，当然整数规划指派问题也可以解决这道题目，这些都是运筹学的内容，不要求大家掌握。  </p>
 <hr>
 <h2 id="E-连锁反应（选做）"><a href="#E-连锁反应（选做）" class="headerlink" title="E.连锁反应（选做）"></a><font color=#0033FF>E.连锁反应（选做）</font></h2><p>我相信很多人看到这道题目的一瞬间，脑袋都有点懵。截止这篇总结编写的时候，只有58个人尝试提交了这道题目，而且这其中还有助教（有可能还有老师）。其实这道题目思路并不难，只是想到这个思路，对于没有软件开发经历的人来说会困难一些。  </p>
 <h4 id="正确答案-4"><a href="#正确答案-4" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><p>先给出思路。题目中叫做消除，我个人更喜欢叫引爆。我们需要做的就是在棋盘上引爆某一个道具，然后看看最终会变成什么样子。<br>既然我们做的只是引爆某一个道具，然后这个道具可能会引爆别的道具，那么我们只需要编写一个可以适用于所有道具的“引爆函数”即可。对于普通的<code>0123456789</code>，引爆就是把它们替换成空格（或者任意一个不会引起歧义的符号均可，便于之后的操作）；对于一个特殊道具，引爆这个道具则不仅仅要把它替换成空格，还要对其他的一些道具进行引爆操作。这样的话，一个递归思路的函数就出来了。  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">a, b = map(int, input().split(<span class="string">','</span>))</span><br><span class="line">board = []                              <span class="comment"># 面板，直白一点的命名多好</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(b):</span><br><span class="line">    board.append(list(input()))</span><br><span class="line">x, y = map(int, input().split(<span class="string">','</span>))</span><br><span class="line">num = <span class="string">'0123456789'</span></span><br><span class="line">alp = <span class="string">'QWERTYUIOP'</span>                      <span class="comment"># 存储消除特定数字的道具</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">explo</span><span class="params">(x, y)</span>:</span>                        <span class="comment"># explose引爆</span></span><br><span class="line">    <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> range(a) <span class="keyword">or</span> y <span class="keyword">not</span> <span class="keyword">in</span> range(b):</span><br><span class="line">        <span class="keyword">return</span>                          <span class="comment"># 对于会越界的操作，终止掉，在引爆X时有可能会越界</span></span><br><span class="line">    <span class="keyword">global</span> board                        <span class="comment"># 注意全局变量</span></span><br><span class="line">    curr = board[y][x]                  <span class="comment"># current,用于存放当前值的一个常用变量名</span></span><br><span class="line">    <span class="keyword">if</span> curr == <span class="string">' '</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        board[y][x] = <span class="string">' '</span>               <span class="comment"># 因为已经存到了curr，而且无论如何这一格都要变成空格</span></span><br><span class="line">    <span class="keyword">if</span> curr <span class="keyword">in</span> num:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> curr == <span class="string">'v'</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(b):              <span class="comment"># 对这一列所有元素进行引爆</span></span><br><span class="line">            explo(x, i)</span><br><span class="line">    <span class="keyword">if</span> curr == <span class="string">'&gt;'</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a):              <span class="comment"># 对这一行所有元素进行引爆</span></span><br><span class="line">            explo(i, y)</span><br><span class="line">    <span class="keyword">if</span> curr == <span class="string">'X'</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> (y<span class="number">-1</span>, y, y+<span class="number">1</span>):         <span class="comment"># 对九宫格进行引爆，因为之前有判断，所以不用担心越界</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> (x<span class="number">-1</span>, x, x+<span class="number">1</span>):</span><br><span class="line">                explo(j, i)</span><br><span class="line">    <span class="keyword">if</span> curr <span class="keyword">in</span> alp:</span><br><span class="line">        t = num[alp.index(curr)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a):              <span class="comment"># 遍历面板，对特定数字进行引爆</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(b):</span><br><span class="line">                <span class="keyword">if</span> board[j][i] == t:</span><br><span class="line">                    explo(i, j)</span><br><span class="line"></span><br><span class="line">explo(x<span class="number">-1</span>, y<span class="number">-1</span>)                         <span class="comment"># 注意坐标起始值</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(a):                      <span class="comment"># 这里进行落下的操作，可以写成很多种样子，我这里稍显繁琐</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    temp = []</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(b):</span><br><span class="line">        <span class="keyword">if</span> board[j][i] == <span class="string">' '</span>:</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            temp.append(board[j][i])</span><br><span class="line">    temp = [<span class="string">' '</span>]*count + temp</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(b):</span><br><span class="line">        board[j][i] = temp[j]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(b):</span><br><span class="line">    print(<span class="string">''</span>.join(board[i]))</span><br></pre></td></tr></table></figure>
+<pre><code class="python">a, b = map(int, input().split(<span class="string">','</span>))
+board = []                              <span class="comment"># 面板，直白一点的命名多好</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(b):
+    board.append(list(input()))
+x, y = map(int, input().split(<span class="string">','</span>))
+num = <span class="string">'0123456789'</span>
+alp = <span class="string">'QWERTYUIOP'</span>                      <span class="comment"># 存储消除特定数字的道具</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">explo</span><span class="params">(x, y)</span>:</span>                        <span class="comment"># explose引爆</span>
+    <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> range(a) <span class="keyword">or</span> y <span class="keyword">not</span> <span class="keyword">in</span> range(b):
+        <span class="keyword">return</span>                          <span class="comment"># 对于会越界的操作，终止掉，在引爆X时有可能会越界</span>
+    <span class="keyword">global</span> board                        <span class="comment"># 注意全局变量</span>
+    curr = board[y][x]                  <span class="comment"># current,用于存放当前值的一个常用变量名</span>
+    <span class="keyword">if</span> curr == <span class="string">' '</span>:
+        <span class="keyword">return</span>
+    <span class="keyword">else</span>:
+        board[y][x] = <span class="string">' '</span>               <span class="comment"># 因为已经存到了curr，而且无论如何这一格都要变成空格</span>
+    <span class="keyword">if</span> curr <span class="keyword">in</span> num:
+        <span class="keyword">return</span>
+    <span class="keyword">if</span> curr == <span class="string">'v'</span>:
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(b):              <span class="comment"># 对这一列所有元素进行引爆</span>
+            explo(x, i)
+    <span class="keyword">if</span> curr == <span class="string">'&gt;'</span>:
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(a):              <span class="comment"># 对这一行所有元素进行引爆</span>
+            explo(i, y)
+    <span class="keyword">if</span> curr == <span class="string">'X'</span>:
+        <span class="keyword">for</span> i <span class="keyword">in</span> (y<span class="number">-1</span>, y, y+<span class="number">1</span>):         <span class="comment"># 对九宫格进行引爆，因为之前有判断，所以不用担心越界</span>
+            <span class="keyword">for</span> j <span class="keyword">in</span> (x<span class="number">-1</span>, x, x+<span class="number">1</span>):
+                explo(j, i)
+    <span class="keyword">if</span> curr <span class="keyword">in</span> alp:
+        t = num[alp.index(curr)]
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(a):              <span class="comment"># 遍历面板，对特定数字进行引爆</span>
+            <span class="keyword">for</span> j <span class="keyword">in</span> range(b):
+                <span class="keyword">if</span> board[j][i] == t:
+                    explo(i, j)
+
+explo(x<span class="number">-1</span>, y<span class="number">-1</span>)                         <span class="comment"># 注意坐标起始值</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(a):                      <span class="comment"># 这里进行落下的操作，可以写成很多种样子，我这里稍显繁琐</span>
+    count = <span class="number">0</span>
+    temp = []
+    <span class="keyword">for</span> j <span class="keyword">in</span> range(b):
+        <span class="keyword">if</span> board[j][i] == <span class="string">' '</span>:
+            count += <span class="number">1</span>
+        <span class="keyword">else</span>:
+            temp.append(board[j][i])
+    temp = [<span class="string">' '</span>]*count + temp
+    <span class="keyword">for</span> j <span class="keyword">in</span> range(b):
+        board[j][i] = temp[j]
+
+<span class="keyword">for</span> i <span class="keyword">in</span> range(b):
+    print(<span class="string">''</span>.join(board[i]))</code></pre>
 <p>关于引爆<code>X</code>越界，当<code>X</code>在面板边界的时候，会发生越界，所以函数开头需要验证一下。<br>有一点需要注意的地方，这道题目使用的是原点在左上角的xOy坐标轴记录位置信息，与我们平时比较常用的“第x行第y列”有所不同，所以在传参和访问元素的时候一定记得核实变量顺序。  </p>
     </div>
   </article>
