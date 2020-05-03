@@ -24,6 +24,7 @@
   
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Styphon's Site" type="application/atom+xml">
 </head>
 
@@ -175,7 +176,34 @@ s = sum(mark)
     print(count)</code></pre>
 <p>使用冒泡排序的思想。将题面转化为冒泡排序思维量不小，感兴趣的同学可以想一下为什么这道题目是冒泡排序。  </p>
 <hr>
-<h2 id="D-异或序列"><a href="#D-异或序列" class="headerlink" title="D.异或序列"></a><font color=#0033FF>D.异或序列</font></h2><p>本次测试最具有区分度的一道题目，拿<code>0.6</code>分也不用太失落。<br>就像高考数学全国卷必做部分最后一道题一样，这道题的前<code>0.6</code>分就好像第一小问，再往后的<code>0.2</code>分就好像第二小问，最后<code>0.2</code>分就是超难的第三小问。<br>首先再解释一下异或运算。逻辑上的异或运算的法则是<code>A xor B</code>当且仅当<code>A</code>与<code>B</code>逻辑值不同时，运算结果为<code>True</code>，否则为<code>False</code>，可以使用符号<code>⊕</code>表示。真值表如下：<br>A|B|A xor B<br>:-:|:-:|:-:|<br><font color=5ECCFF>True</font>|<font color=5ECCFF>True</font>|<font color=FF5E5E>False</font><br><font color=5ECCFF>True</font>|<font color=FF5E5E>False</font>|<font color=5ECCFF>True</font><br><font color=FF5E5E>False</font>|<font color=5ECCFF>True</font>|<font color=5ECCFF>True</font><br><font color=FF5E5E>False</font>|<font color=FF5E5E>False</font>|<font color=FF5E5E>False</font>  </p>
+<h2 id="D-异或序列"><a href="#D-异或序列" class="headerlink" title="D.异或序列"></a><font color=#0033FF>D.异或序列</font></h2><p>本次测试最具有区分度的一道题目，拿<code>0.6</code>分也不用太失落。<br>就像高考数学全国卷必做部分最后一道题一样，这道题的前<code>0.6</code>分就好像第一小问，再往后的<code>0.2</code>分就好像第二小问，最后<code>0.2</code>分就是超难的第三小问。<br>首先再解释一下异或运算。逻辑上的异或运算的法则是<code>A xor B</code>当且仅当<code>A</code>与<code>B</code>逻辑值不同时，运算结果为<code>True</code>，否则为<code>False</code>，可以使用符号<code>⊕</code>表示。真值表如下：<br>
+<table border="1">
+  <tr>
+    <td>A</td>
+    <td>B</td>
+    <td>A xor B</td>
+  </tr>
+  <tr>
+    <td><font color=5ECCFF>True</font></td>
+    <td><font color=5ECCFF>True</font></td>
+    <td><font color=FF5E5E>False</font></td>
+  </tr>
+  <tr>
+    <td><font color=5ECCFF>True</font></td>
+    <td><font color=FF5E5E>False</font></td>
+    <td><font color=5ECCFF>True</font></td>
+  </tr>
+  <tr>
+    <td><font color=FF5E5E>False</font></td>
+    <td><font color=5ECCFF>True</font></td>
+    <td><font color=5ECCFF>True</font></td>
+  </tr>
+  <tr>
+    <td><font color=FF5E5E>False</font></td>
+    <td><font color=FF5E5E>False</font></td>
+    <td><font color=FF5E5E>False</font></td>
+  </tr>
+</table>
 <p>两个正整数间的按位异或则是将两个数转化为二进制，然后<code>0</code>对应<code>False</code>，<code>1</code>对应<code>True</code>，每一位进行异或运算，最后将结果转化为十进制。在<code>python</code>中，按位异或运算符是<code>^</code>，在英文输入法下使用<kbd>Shift</kbd>+<kbd>6</kbd>输入（中文输入法下会输入省略号）。<br>然后是异或运算的一些性质：  </p>
 <blockquote>
 <p>A xor A = 0<br>A xor 0 = A<br>A xor B = B xor A<br>A xor B = 0 iff A = B<br>A xor B = A iff B = 0<br>A xor B = C iff A xor C = B iff B xor C = A<br>(A xor B) xor C = A xor (B xor C)</p>
