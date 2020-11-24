@@ -1,0 +1,424 @@
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>Styphon&#39;s Site</title>
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+<script src="/lib/jquery.js"></script>
+
+  
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+
+  
+<script src="/js/common.js"></script>
+
+  
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+
+  
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Styphon's Site" type="application/atom+xml">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">Styphon&#39;s Site</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a target="_blank" rel="noopener" href="https://github.com/Sutaifun" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
+  </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a target="_blank" rel="noopener" href="https://github.com/Sutaifun" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
+
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">2019CCBSummary#02</h2>
+       
+        <p>python</p>
+      
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2020-04-13</span>
+    </div>
+    <div class="post-content">
+      </p>
+<h1 id="第二次实验问题汇总"><a href="#第二次实验问题汇总" class="headerlink" title="第二次实验问题汇总"></a>第二次实验问题汇总</h1><hr>
+<h2 id="A-FizzBuzz"><a href="#A-FizzBuzz" class="headerlink" title="A.FizzBuzz"></a><font color=0033FF>A.FizzBuzz</font></h2><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>分支条件不充分（这个是假想问题。本地可以排除，所以OJ上不会体现）  </li>
+</ul>
+<h4 id="错误示范"><a href="#错误示范" class="headerlink" title="错误示范"></a><font color=#FF5E5E>错误示范</font></h4><pre><code class="lang-python">n = int(input())
+data = []
+for i in range(n):
+    x = int(input())
+    data.append(x)
+for a in data:
+    if a%3 == 0:
+        print(&#39;fizz&#39;)
+    elif a%5 == 0:
+        print(&#39;buzz&#39;)
+    elif a%15 == 0:
+        print(&#39;fizzbuzz&#39;)
+    else:
+        print(a)
+#这样的话可以被15整除的都会输出fizz而不是fizzbuzz
+</code></pre>
+<h4 id="正确答案"><a href="#正确答案" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="lang-python">n = int(input())
+data = []
+for i in range(n):
+    x = int(input())
+    data.append(x)
+for a in data:
+    if a%3 == 0 and a%5 != 0:
+        print(&#39;fizz&#39;)
+    elif a%5 == 0 and a%3 != 0:
+        print(&#39;buzz&#39;)
+    elif a%15 == 0:
+        print(&#39;fizzbuzz&#39;)
+    else:
+        print(a)
+#判断条件要更充分
+</code></pre>
+<h4 id="优化解法"><a href="#优化解法" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><pre><code class="lang-python">n = int(input())
+data = []
+for i in range(n):
+    x = int(input())
+    data.append(x)
+for a in data:
+    if a%15 == 0:
+        print(&#39;fizzbuzz&#39;)
+    elif a%5 == 0:
+        print(&#39;buzz&#39;)
+    elif a%3 == 0:
+        print(&#39;fizz&#39;)
+    else:
+        print(a)
+#先判断15就没有任何问题啦！不妨想想为什么
+</code></pre>
+<h4 id="奇怪的解法"><a href="#奇怪的解法" class="headerlink" title="奇怪的解法"></a><font color=#9966FF>奇怪的解法</font></h4><pre><code class="lang-python">n = int(input())
+for i in range(n):
+    x = int(input())
+    flag = True
+    if x%3 == 0:
+        print(&#39;fizz&#39;, end=&#39;&#39;)
+        flag = False
+    if x%5 == 0:
+        print(&#39;buzz&#39;, end=&#39;&#39;)
+        flag = False
+    if flag:
+        print(x, end=&#39;&#39;)
+    print()
+#这个是我写的解法啦，有点小奇妙但是并没有简化多少，所以专门开了一栏
+#顺带提一下，OJ系统上检测输出数据的时候是不受输入数据影响的
+#所以输出输入穿插进行是可以的
+</code></pre>
+<hr>
+<h2 id="B-对话过滤"><a href="#B-对话过滤" class="headerlink" title="B.对话过滤"></a><font color=0033FF>B.对话过滤</font></h2><h3 id="常见问题-1"><a href="#常见问题-1" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>使用ASCII码完成大小写字母匹配，但忽略了其他符号的影响</li>
+<li>对字母和符号一视同仁，顺便删去了重复的符号</li>
+<li>对字符串通过下标访问时访问越界  </li>
+</ul>
+<h4 id="错误示范-1"><a href="#错误示范-1" class="headerlink" title="错误示范"></a><font color=#FF5E5E>错误示范</font></h4><pre><code class="lang-python">s=str(input())
+ns=&#39;&#39;
+for i in range(0,len(s)):    
+    if s[i].isalpha()==True:
+        if ord(s[i])==ord(s[i-1]) or ord(s[i])==ord(s[i-1])+32 or ord(s[i])==ord(s[i-1])-32:
+            pass
+        else:
+            ns+=s[i]
+    else:
+        ns+=s[i]
+print(ns)
+#注意到最长的一行使用了ASCII码来判断字母是否重复
+#并且使用+-32的方式将大小写字母全部考虑到了
+#但是需要注意的是&#39;!&#39;和&#39;A&#39;,&#39;#&#39;和&#39;C&#39;等字符也是ASCII码相差32的
+#因此会删除一些跟在某一些特定符号后的特定字母
+</code></pre>
+<pre><code class="lang-python">s=input()
+ns=s[0]
+for i in range(1,len(s)):
+    if str.upper(s[i])!=str.upper(s[i-1]):
+        ns=ns+s[i]
+print(ns)
+#思路很好，但是这样不仅删去了重复的字母，还删去了重复的非字母字符
+</code></pre>
+<h4 id="正确答案-1"><a href="#正确答案-1" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="lang-python">s=input()
+ns=s[0]
+for i in range(1,len(s)):
+    if (not str.isalpha(s[i])) or (str.upper(s[i])!=str.upper(s[i-1])):
+        ns=ns+s[i]
+print(ns)
+</code></pre>
+<h4 id="优化解法-1"><a href="#优化解法-1" class="headerlink" title="优化解法"></a><font color=#33EEBB>优化解法</font></h4><pre><code class="lang-python">#按理说也不算优化解法，只是提供另一个思路
+#同学们基本上都是通过下标将一个字符与上一个字符比较
+#其实也可以创建一个变量用于存储上一个字符
+s = input()
+ans = &#39;&#39;
+pre = &#39;&#39;
+for i in s:
+    if i.isalpha():
+        if i.lower() == pre.lower():
+            continue
+    pre = i
+    ans = ans + i
+print(ans)
+#注意这里pre就是用来存储上一字符的变量
+#注意这里continue的用法
+</code></pre>
+<hr>
+<h2 id="C-Cantor表"><a href="#C-Cantor表" class="headerlink" title="C.Cantor表"></a><font color=0033FF>C.Cantor表</font></h2><h3 id="常见问题-2"><a href="#常见问题-2" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>题目要求适用空格，却使用了制表符<code>\t</code>隔开</li>
+<li>换行的时候使用了<code>print(&#39;\n&#39;)</code>  </li>
+</ul>
+<h4 id="错误示范-2"><a href="#错误示范-2" class="headerlink" title="错误示范"></a><font color=#FF5E5E>错误示范</font></h4><pre><code class="lang-python">n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n+2-i):
+         print(&#39;%d/%d&#39;%(i,j),end=&#39;\t&#39;) 
+    print()
+#题目要求空格但是使用了制表符&#39;\t&#39;
+</code></pre>
+<pre><code class="lang-python">n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n+2-i):
+         print(&#39;%d/%d&#39;%(i,j),end=&#39; &#39;) 
+    print(&#39;\n&#39;)
+#要注意print()函数自带一个end=&#39;\n&#39;，需要仅换行的时候使用不带参数的print()即可
+</code></pre>
+<h4 id="正确答案-2"><a href="#正确答案-2" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="lang-python">n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n+2-i):
+         print(&#39;%d/%d&#39;%(i,j),end=&#39; &#39;) 
+    print()
+#OJ在检验输出结果的时候一般情况下会自动忽略掉行末的空格和段落末尾的换行符
+#我给命题组提意见要求删掉行尾没有多余空格那句话但是最后没改
+</code></pre>
+<hr>
+<h2 id="D-新数根的计算"><a href="#D-新数根的计算" class="headerlink" title="D.新数根的计算"></a><font color=0033FF>D.新数根的计算</font></h2><h3 id="常见问题-3"><a href="#常见问题-3" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>边界条件设置有问题，会输出10</li>
+<li>循环变量的赋值时机（包括赋初始值和循环过程中赋值）把握不清楚</li>
+<li>在比较的时候没有把握好变量类型  </li>
+</ul>
+<h4 id="错误示范-3"><a href="#错误示范-3" class="headerlink" title="错误示范"></a><font color=#FF5E5E>错误示范</font></h4><pre><code class="lang-python">n = str(input())
+while int(n) &gt; 10:
+    b = 1
+    for i in n :
+        if i != &#39;0&#39;:
+            b = b * int(i)
+        else:
+            continue
+    n = str(b)
+print(n)
+#如果中间计算出了10这个数字，会直接跳出循环，导致结果出错
+</code></pre>
+<pre><code class="lang-python">n = str(input())
+while int(n) &gt;= 10:
+    b = 1
+    for i in n :
+        if i != 0:
+            b = b * int(i)
+        else:
+            continue
+    n = str(b)
+print(n)
+#if判断的时候，i是一个字符串，所以一定不会和0相等
+</code></pre>
+<pre><code class="lang-python">a=input()
+m=1
+while len(a)&gt;1:
+    for i in a:
+        if i == &#39;0&#39;:
+            continue
+        m=m*int(i)
+    a=str(m)
+print(a)
+#m作为for循环的循环变量，应在for前初始化
+#所以应该写在while里
+</code></pre>
+<h4 id="正确答案-3"><a href="#正确答案-3" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="lang-python">num = input()
+while int(num) &gt;= 10:
+#while len(num) &gt; 1:
+    product = 1
+    for i in num:
+        if i != &#39;0&#39;:
+            product *= int(i)
+    num = str(product)
+print(num)
+#通过数值大小或者字符串长度判断是否跳出循环都是正确思路
+</code></pre>
+<hr>
+<h2 id="E-第k对角线（选做）"><a href="#E-第k对角线（选做）" class="headerlink" title="E.第k对角线（选做）"></a><font color=0033FF>E.第k对角线（选做）</font></h2><ul>
+<li>做的人实在太少了</li>
+<li>一个比较常见的问题是题意理解不清</li>
+<li>所以直接给AC代码了  </li>
+</ul>
+<h4 id="正确答案-4"><a href="#正确答案-4" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="lang-python">n = int(input())
+k = int(input())
+vice = int(input())
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        if vice:                    #如果要画副对角线
+            if k==abs(j+i-n-1):     #这里是判断(i,j)在不在n阶方阵的第k副对角线上
+                print(&#39;x&#39;, end=&#39;&#39;)
+            else:
+                print(&#39;*&#39;, end=&#39;&#39;)
+        else:                       #如果要画主对角线
+            if k==abs(i-j):         #这里是判断(i,j)在不在n阶方阵的第k主对角线上
+                print(&#39;x&#39;, end=&#39;&#39;)
+            else:
+                print(&#39;*&#39;, end=&#39;&#39;)
+    print()                         #使用print()换行
+</code></pre>
+<hr>
+<h2 id="F-中国剩余定理（选做）"><a href="#F-中国剩余定理（选做）" class="headerlink" title="F.中国剩余定理（选做）"></a><font color=0033FF>F.中国剩余定理（选做）</font></h2><h3 id="常见问题-4"><a href="#常见问题-4" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>忽略了输出正整数的条件</li>
+<li>没有注意到除法会将数据转换为浮点数，而浮点数精度可能出现问题  </li>
+</ul>
+<h4 id="正确答案-5"><a href="#正确答案-5" class="headerlink" title="正确答案"></a><font color=#5ECCFF>正确答案</font></h4><pre><code class="lang-python">n = int(input())
+con = []
+prod = 1                                #记录所有除数的乘积
+for i in range(n):
+    x, y = map(int, input().split())
+    prod *= x
+    con.append((x, y))                  #每一个元素是一个元组，第一项是除数，第二项是余数
+rev = []                                #存储每个除数的“逆”
+for item in con:
+    i = 1                               #while循环变量赋初值
+    att = prod // item[0]               #注意此处使用地板除来消除python浮点数运算精度不高的问题
+    while att * i % item[0] != 1:
+        i += 1                          #逐一寻找“逆”
+    rev.append(att * i)                 #将“逆”存起来
+ans = 0                                 #下面求和用的for循环变量赋初值
+for i in range(n):
+    ans += con[i][1] * rev[i]           #根据公式把ak+b形式算出来
+ans = ans % prod                        #取最小的可能值
+if ans == 0:                            #确保输出正整数
+    ans = prod
+print(ans)
+</code></pre>
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2020/04/11/2019CCBSummary-01/" rel="next" title="2019CCBSummary#01">
+          <i class="fa fa-chevron-left"></i> 2019CCBSummary#01
+        </a>
+      
+    </div>
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
+    
+        <a href="/2020/04/13/2019CCBSummary-03/" rel="prev" title="2019CCBSummary#03">
+          2019CCBSummary#03 <i class="fa fa-chevron-right"></i>
+        </a>
+      
+    </div>
+  </div>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2020</span>
+      
+      <span class="author"><i class="fa fa-user"></i>Styphon</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a target="_blank" rel="noopener" href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>
